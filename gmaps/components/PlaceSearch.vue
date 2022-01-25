@@ -273,6 +273,7 @@ export default {
         this.marker = new window.google.maps.Marker({
           map: this.map,
           draggable: true,
+          zIndex: 100001,
           anchorPoint: new window.google.maps.Point(0, -29),
         });
 
