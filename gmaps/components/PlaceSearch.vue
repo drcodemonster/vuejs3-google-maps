@@ -69,7 +69,7 @@ export default {
       //Default Coordinates (Somewhere in North Atlantic Ocean) if GPS and Find By Country Fails
       lat: this.geolocation != null ? this.geolocation.lat : null,
       lng: this.geolocation != null ? this.geolocation.lng : null,
-      query_address: this.address.query,
+      query_address: this.address && this.address.query ? this.address.query: null,
       default_zoom: this.zoom != undefined ? this.zoom : 9,
       query: "",
       map: null,
@@ -141,14 +141,16 @@ export default {
       };
     },
     createMap(geolocation, zoom) {
-      this.map = new window.google.maps.Map(document.getElementById("map"), {
-        center: geolocation,
-        zoom: zoom,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        mapTypeControlOptions: {
-          position: window.google.maps.ControlPosition.BOTTOM_LEFT,
-        },
-      });
+      if (geolocation && geolocation.lat && geolocation.lng) {
+        this.map = new window.google.maps.Map(document.getElementById("map"), {
+          center: geolocation,
+          zoom: zoom,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          mapTypeControlOptions: {
+            position: window.google.maps.ControlPosition.BOTTOM_LEFT,
+          },
+        });
+      }
     },
     findNearestPlace() {
       this.findPlaces(this.lat, this.lng, 10, (results, status) => {
