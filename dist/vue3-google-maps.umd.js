@@ -141,17 +141,6 @@ module.exports = Queue;
 
 /***/ }),
 
-/***/ "0208":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_1e8eaca2_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("3761");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_1e8eaca2_lang_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_1e8eaca2_lang_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
-
-
-/***/ }),
-
 /***/ "0366":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1110,22 +1099,6 @@ module.exports = function (it) {
     || Iterators[classof(it)];
 };
 
-
-/***/ }),
-
-/***/ "3761":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("73e7");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("691fe6e7", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -2141,6 +2114,25 @@ module.exports = function (originalArray, length) {
 
 /***/ }),
 
+/***/ "66c2":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__("1de5");
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__("bbc5");
+var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__("4d66");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
+// Module
+exports.push([module.i, "#mapHolder{position:relative}#mapHolder,#mapHolder #map,#mapHolder #map .loading{width:100%;height:100%;float:left}#mapHolder #map .loading{background-color:#ededed;position:realtive}#mapHolder #map .loading .text{width:100%;padding:15px;text-align:center;position:absolute;top:50%;transform:translateY(-50%)}#mapHolder #map iframe{width:100%;height:100%}#mapHolder #map #infowindow-content,#mapHolder #map #pac-card{display:block}@-webkit-keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}@keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}#mapHolder #pac-card{background:#ededed;padding:10px;width:100%;height:auto;display:none;position:relative}#mapHolder #pac-card input{width:100%;line-height:30px;border-radius:5px;background-color:#fff;border:0;outline:0;padding:5px 40px 5px 40px;font-size:14px;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");background-size:auto 15px;background-repeat:no-repeat;background-position:left 15px center}#mapHolder #pac-card .location-by-gps-btn{position:absolute;width:30px;height:30px;top:50%;transform:translateY(-50%);right:15px}#mapHolder #pac-card .location-by-gps-btn:hover{cursor:pointer}#mapHolder #pac-card .location-by-gps-btn:before{display:block;content:\"\";width:100%;height:100%;position:absolute;top:0;left:0;z-index:2;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");background-position:50%;background-repeat:no-repeat;background-size:18px auto;border-radius:30px}#mapHolder #pac-card .location-by-gps-btn.searching:after{display:block;border-radius:30px;background-color:#fdf6e3;content:\"\";width:100%;height:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;-webkit-animation-name:gps-searching-animation;animation-name:gps-searching-animation;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-duration:1s;animation-duration:1s}#mapHolder #infowindow-content{width:100%;float:left;display:none}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "68ee":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2369,25 +2361,6 @@ module.exports = function ($this, dummy, Wrapper) {
   ) setPrototypeOf($this, NewTargetPrototype);
   return $this;
 };
-
-
-/***/ }),
-
-/***/ "73e7":
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
-var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__("1de5");
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__("bbc5");
-var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__("4d66");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
-var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
-// Module
-exports.push([module.i, "#mapHolder{position:relative}#mapHolder,#mapHolder #map,#mapHolder #map .loading{width:100%;height:100%;float:left}#mapHolder #map .loading{background-color:#ededed;position:realtive}#mapHolder #map .loading .text{width:100%;padding:15px;text-align:center;position:absolute;top:50%;transform:translateY(-50%)}#mapHolder #map iframe{width:100%;height:100%}#mapHolder #map #infowindow-content,#mapHolder #map #pac-card{display:block}@-webkit-keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}@keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}#mapHolder #pac-card{background:#ededed;padding:10px;width:100%;height:auto;display:none;position:relative}#mapHolder #pac-card input{width:100%;line-height:30px;border-radius:5px;background-color:#fff;border:0;outline:0;padding:5px 40px 5px 40px;font-size:14px;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");background-size:auto 15px;background-repeat:no-repeat;background-position:left 15px center}#mapHolder #pac-card .location-by-gps-btn{position:absolute;width:30px;height:30px;top:50%;transform:translateY(-50%);right:15px}#mapHolder #pac-card .location-by-gps-btn:hover{cursor:pointer}#mapHolder #pac-card .location-by-gps-btn:before{display:block;content:\"\";width:100%;height:100%;position:absolute;top:0;left:0;z-index:2;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");background-position:50%;background-repeat:no-repeat;background-size:18px auto;border-radius:30px}#mapHolder #pac-card .location-by-gps-btn.searching:after{display:block;border-radius:30px;background-color:#fdf6e3;content:\"\";width:100%;height:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;-webkit-animation-name:gps-searching-animation;animation-name:gps-searching-animation;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-duration:1s;animation-duration:1s}#mapHolder #infowindow-content{width:100%;float:left;display:none}", ""]);
-// Exports
-module.exports = exports;
 
 
 /***/ }),
@@ -4613,6 +4586,22 @@ if (DESCRIPTORS && !FUNCTION_NAME_EXISTS) {
 
 /***/ }),
 
+/***/ "b39c":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("66c2");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("70221328", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "b575":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5650,6 +5639,17 @@ if (!IS_PURE && DESCRIPTORS && values.name !== 'values') try {
 
 /***/ }),
 
+/***/ "e2c9":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_455d2210_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("b39c");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_455d2210_lang_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_455d2210_lang_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "e2cc":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6550,7 +6550,7 @@ var es_function_name = __webpack_require__("b0c0");
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./gmaps/components/PlaceSearch.vue?vue&type=template&id=1e8eaca2
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./gmaps/components/PlaceSearch.vue?vue&type=template&id=455d2210
 
 
 var _hoisted_1 = {
@@ -6599,7 +6599,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, ["prevent"]))
   }, null, 2)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", _hoisted_7, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", _hoisted_8, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.place != null ? $data.place.name : ""), 1), _hoisted_9, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", _hoisted_10, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.place != null ? $data.place.formatted_address : ""), 1)])]);
 }
-// CONCATENATED MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=template&id=1e8eaca2
+// CONCATENATED MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=template&id=455d2210
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
 
@@ -6791,19 +6791,24 @@ var es_promise_finally = __webpack_require__("a79d");
       };
     },
     createMap: function createMap(geolocation, zoom) {
-      if (geolocation && geolocation.lat && geolocation.lng) {
-        this.map = new window.google.maps.Map(document.getElementById("map"), {
-          center: geolocation,
-          zoom: zoom,
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          mapTypeControlOptions: {
-            position: window.google.maps.ControlPosition.BOTTOM_LEFT
-          }
-        });
-      }
+      var _this2 = this;
+
+      return new Promise(function (resolve) {
+        if (geolocation && geolocation.lat && geolocation.lng) {
+          _this2.map = new window.google.maps.Map(document.getElementById("map"), {
+            center: geolocation,
+            zoom: zoom,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            mapTypeControlOptions: {
+              position: window.google.maps.ControlPosition.BOTTOM_LEFT
+            }
+          });
+          resolve(_this2.map);
+        }
+      });
     },
     findNearestPlace: function findNearestPlace() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.findPlaces(this.lat, this.lng, 10, function (results, status) {
         if (status === window.google.maps.places.PlacesServiceStatus.OK) {
@@ -6820,9 +6825,9 @@ var es_promise_finally = __webpack_require__("a79d");
             }
           }
 
-          _this2.getPlaceDetails(firstResult.place_id, function (place, status) {
+          _this3.getPlaceDetails(firstResult.place_id, function (place, status) {
             if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-              _this2.place = place;
+              _this3.place = place;
             }
           });
         }
@@ -6914,7 +6919,7 @@ var es_promise_finally = __webpack_require__("a79d");
       });
     },
     initMapByAddress: function initMapByAddress() {
-      var _this3 = this;
+      var _this4 = this;
 
       var geocoder = new window.google.maps.Geocoder();
       var zoom = this.address.zoom != undefined ? this.address.zoom : this.default_zoom;
@@ -6922,19 +6927,19 @@ var es_promise_finally = __webpack_require__("a79d");
         address: this.query_address
       }, function (results, status) {
         if (status == window.google.maps.GeocoderStatus.OK) {
-          _this3.createMap(results[0].geometry.location, zoom);
+          _this4.createMap(results[0].geometry.location, zoom);
 
-          _this3.place = results[0];
+          _this4.place = results[0];
 
-          _this3.prepareMap();
+          _this4.prepareMap();
         } else {
           //Use default lat long
-          _this3.initMapByCoordinates(_this3.lat, _this3.lng, 5);
+          _this4.initMapByCoordinates(_this4.lat, _this4.lng, 5);
         }
       });
     },
     createMarker: function createMarker() {
-      var _this4 = this;
+      var _this5 = this;
 
       var latlng = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
       var draggable = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
@@ -6952,17 +6957,17 @@ var es_promise_finally = __webpack_require__("a79d");
 
 
         window.google.maps.event.addListener(this.marker, "dragend", function () {
-          _this4.lat = _this4.marker.getPosition().lat();
-          _this4.lng = _this4.marker.getPosition().lng();
+          _this5.lat = _this5.marker.getPosition().lat();
+          _this5.lng = _this5.marker.getPosition().lng();
         }); //Get markes position on move
 
         window.google.maps.event.addListener(this.marker, "dragstart", function () {
-          _this4.hideInfoWindow();
+          _this5.hideInfoWindow();
         });
       }
     },
     placeMarkersOnMap: function placeMarkersOnMap(places) {
-      var _this5 = this;
+      var _this6 = this;
 
       var map = new window.google.maps.Map(document.getElementById("map"), {
         mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -6989,7 +6994,7 @@ var es_promise_finally = __webpack_require__("a79d");
             anchorPoint: new window.google.maps.Point(0, -29)
           });
 
-          _this5.newMerkerBubble(marker, place); // Automatically center the map fitting all markers on the screen
+          _this6.newMerkerBubble(marker, place); // Automatically center the map fitting all markers on the screen
 
 
           if (places.length > 1) {
@@ -7043,7 +7048,7 @@ var es_promise_finally = __webpack_require__("a79d");
       }
     },
     generateSearchCard: function generateSearchCard() {
-      var _this6 = this;
+      var _this7 = this;
 
       var card = document.getElementById("pac-card");
       var input = document.getElementById("pac-input");
@@ -7063,9 +7068,9 @@ var es_promise_finally = __webpack_require__("a79d");
 
       this.createMarker();
       autocomplete.addListener("place_changed", function () {
-        _this6.hideInfoWindow();
+        _this7.hideInfoWindow();
 
-        _this6.marker.setVisible(false);
+        _this7.marker.setVisible(false);
 
         var place = autocomplete.getPlace();
 
@@ -7078,24 +7083,24 @@ var es_promise_finally = __webpack_require__("a79d");
 
 
         if (place.geometry.viewport) {
-          _this6.map.fitBounds(place.geometry.viewport);
+          _this7.map.fitBounds(place.geometry.viewport);
         } else {
-          _this6.map.setCenter(place.geometry.location);
+          _this7.map.setCenter(place.geometry.location);
 
-          _this6.map.setZoom(17);
+          _this7.map.setZoom(17);
         }
 
-        _this6.marker.setPosition(place.geometry.location);
+        _this7.marker.setPosition(place.geometry.location);
 
-        _this6.marker.setVisible(true);
+        _this7.marker.setVisible(true);
 
-        _this6.place = place;
+        _this7.place = place;
 
-        _this6.showInfoWindow();
+        _this7.showInfoWindow();
       });
     },
     prepareMap: function prepareMap() {
-      var _this7 = this;
+      var _this8 = this;
 
       if (this.mapOnly) {
         if (this.placeList.length === 0) {
@@ -7119,10 +7124,10 @@ var es_promise_finally = __webpack_require__("a79d");
         //Bind map events
         window.google.maps.event.addListener(this.map, "click", function (e) {
           //Marker re position
-          _this7.repositionMarker(e["latLng"]); //Hide info window
+          _this8.repositionMarker(e["latLng"]); //Hide info window
 
 
-          _this7.hideInfoWindow();
+          _this8.hideInfoWindow();
         });
         this.generateSearchCard();
         this.createInfoWindow();
@@ -7133,135 +7138,166 @@ var es_promise_finally = __webpack_require__("a79d");
     },
     //Get location via GPS
     getLocationViaGPS: function getLocationViaGPS() {
-      var _this8 = this;
+      var _this9 = this;
 
       this.searching_gps = true;
       this.$getLocation({
         timeout: this.gps_timeout
       }).then(function (coordinates) {
-        _this8.lat = coordinates.lat;
-        _this8.lng = coordinates.lng;
+        _this9.lat = coordinates.lat;
+        _this9.lng = coordinates.lng;
 
-        _this8.findNearestPlace();
+        _this9.findNearestPlace();
 
-        _this8.marker.setPosition({
-          lat: _this8.lat,
-          lng: _this8.lng
+        _this9.marker.setPosition({
+          lat: _this9.lat,
+          lng: _this9.lng
         });
 
-        _this8.map.panTo(new window.google.maps.LatLng(_this8.lat, _this8.lng));
+        _this9.map.panTo(new window.google.maps.LatLng(_this9.lat, _this9.lng));
       }).catch(function (error) {
         console.log(error);
       }).finally(function () {
-        _this8.searching_gps = false;
+        _this9.searching_gps = false;
       });
     },
     //Get location via props
     getLocationViaGivenLatLong: function getLocationViaGivenLatLong() {
-      var location = this.locationGiven;
-
-      if (this.placeList.length === 0 && location) {
-        this.createMap(location, this.zoom);
-
-        if (location.lat !== undefined && location.lng !== undefined && location.lat !== null && location.lng !== null) {
-          this.lat = location.lat;
-          this.lng = location.lng;
-          this.createMarker(location, false);
-          this.marker.setPosition(location);
-          this.newMerkerBubble(this.marker, location);
-          this.map.panTo(new window.google.maps.LatLng(location));
-        } else {
-          console.warn("Given Location {lat: lng: } value missing");
-        }
-      }
-
-      this.prepareMap();
-    },
-    buildApplication: function buildApplication() {
-      var _this9 = this;
+      var _this10 = this;
 
       return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        var location;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                if (_this9.fallbackProcedure === "manually") {
-                  _this9.initMapManually();
-                } else if (_this9.fallbackProcedure === "geolocation") {
-                  _this9.initMapByCoordinates(_this9.lat, _this9.lng);
-                } else if (_this9.fallbackProcedure === "address") {
-                  _this9.initMapByAddress();
-                } else if (_this9.fallbackProcedure === "location-given") {
-                  _this9.getLocationViaGivenLatLong();
-                } else {
-                  _this9.searching_gps = true;
+                location = _this10.locationGiven;
 
-                  _this9.$getLocation({
-                    timeout: _this9.gps_timeout
-                  }).then(function (coordinates) {
-                    _this9.lat = coordinates.lat;
-                    _this9.lng = coordinates.lng;
-
-                    _this9.initMapByCoordinates(_this9.lat, _this9.lng, _this9.zoom); //Create Marker
-
-
-                    _this9.createMarker();
-
-                    _this9.marker.setPosition({
-                      lat: _this9.lat,
-                      lng: _this9.lng
-                    });
-                  }).catch(function () {
-                    _this9.initMapByAddress();
-                  }).finally(function () {
-                    _this9.searching_gps = false;
-                  });
+                if (!(_this10.placeList.length === 0 && location)) {
+                  _context.next = 7;
+                  break;
                 }
 
-              case 1:
+                _context.next = 4;
+                return _this10.createMap(location, _this10.zoom);
+
+              case 4:
+                if (location.lat !== undefined && location.lng !== undefined && location.lat !== null && location.lng !== null) {
+                  _this10.lat = location.lat;
+                  _this10.lng = location.lng;
+
+                  _this10.prepareMap();
+
+                  _this10.createMarker(location, false);
+
+                  _this10.marker.setPosition(location);
+
+                  _this10.newMerkerBubble(_this10.marker, location);
+
+                  _this10.map.panTo(new window.google.maps.LatLng(location));
+                } else {
+                  console.warn("Given Location {lat: lng: } value missing");
+                }
+
+                _context.next = 8;
+                break;
+
+              case 7:
+                _this10.prepareMap();
+
+              case 8:
               case "end":
                 return _context.stop();
             }
           }
         }, _callee);
       }))();
+    },
+    buildApplication: function buildApplication() {
+      var _this11 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (_this11.fallbackProcedure === "manually") {
+                  _this11.initMapManually();
+                } else if (_this11.fallbackProcedure === "geolocation") {
+                  _this11.initMapByCoordinates(_this11.lat, _this11.lng);
+                } else if (_this11.fallbackProcedure === "address") {
+                  _this11.initMapByAddress();
+                } else if (_this11.fallbackProcedure === "location-given") {
+                  _this11.getLocationViaGivenLatLong();
+                } else {
+                  _this11.searching_gps = true;
+
+                  _this11.$getLocation({
+                    timeout: _this11.gps_timeout
+                  }).then(function (coordinates) {
+                    _this11.lat = coordinates.lat;
+                    _this11.lng = coordinates.lng;
+
+                    _this11.initMapByCoordinates(_this11.lat, _this11.lng, _this11.zoom); //Create Marker
+
+
+                    _this11.createMarker();
+
+                    _this11.marker.setPosition({
+                      lat: _this11.lat,
+                      lng: _this11.lng
+                    });
+                  }).catch(function () {
+                    _this11.initMapByAddress();
+                  }).finally(function () {
+                    _this11.searching_gps = false;
+                  });
+                }
+
+              case 1:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   },
   mounted: function mounted() {
-    var _this10 = this;
+    var _this12 = this;
 
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-      return regeneratorRuntime.wrap(function _callee2$(_context2) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+      return regeneratorRuntime.wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
-              _context2.next = 2;
+              _context3.next = 2;
               return lib_loader.ensureReady();
 
             case 2:
-              if (!(_this10.ready != undefined && _this10.ready == false)) {
-                _context2.next = 4;
+              if (!(_this12.ready != undefined && _this12.ready == false)) {
+                _context3.next = 4;
                 break;
               }
 
-              return _context2.abrupt("return");
+              return _context3.abrupt("return");
 
             case 4:
-              _this10.buildApplication();
+              _this12.buildApplication();
 
             case 5:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2);
+      }, _callee3);
     }))();
   }
 });
 // CONCATENATED MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=script&lang=js
  
-// EXTERNAL MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=style&index=0&id=1e8eaca2&lang=scss
-var PlaceSearchvue_type_style_index_0_id_1e8eaca2_lang_scss = __webpack_require__("0208");
+// EXTERNAL MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=style&index=0&id=455d2210&lang=scss
+var PlaceSearchvue_type_style_index_0_id_455d2210_lang_scss = __webpack_require__("e2c9");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader-v16/dist/exportHelper.js
 var exportHelper = __webpack_require__("6b0d");

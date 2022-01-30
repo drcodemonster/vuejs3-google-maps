@@ -141,16 +141,19 @@ export default {
       };
     },
     createMap(geolocation, zoom) {
-      if (geolocation && geolocation.lat && geolocation.lng) {
-        this.map = new window.google.maps.Map(document.getElementById("map"), {
-          center: geolocation,
-          zoom: zoom,
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          mapTypeControlOptions: {
-            position: window.google.maps.ControlPosition.BOTTOM_LEFT,
-          },
-        });
-      }
+      return new Promise((resolve) => {
+        if (geolocation && geolocation.lat && geolocation.lng) {
+          this.map = new window.google.maps.Map(document.getElementById("map"), {
+            center: geolocation,
+            zoom: zoom,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            mapTypeControlOptions: {
+              position: window.google.maps.ControlPosition.BOTTOM_LEFT,
+            },
+          });
+          resolve(this.map);
+        }
+      });
     },
     findNearestPlace() {
       this.findPlaces(this.lat, this.lng, 10, (results, status) => {
@@ -516,10 +519,10 @@ export default {
         });
     },
     //Get location via props
-    getLocationViaGivenLatLong() {
+    async getLocationViaGivenLatLong() {
       const location = this.locationGiven;
       if (this.placeList.length === 0 && location) {
-        this.createMap(location, this.zoom);
+        await this.createMap(location, this.zoom);
         if (
           location.lat !== undefined &&
           location.lng !== undefined &&
@@ -528,6 +531,7 @@ export default {
         ) {
           this.lat = location.lat;
           this.lng = location.lng;
+          this.prepareMap();
           this.createMarker(location, false);
           this.marker.setPosition(location);
           this.newMerkerBubble(this.marker, location);
@@ -535,8 +539,9 @@ export default {
         } else {
           console.warn("Given Location {lat: lng: } value missing");
         }
+      } else {
+        this.prepareMap();
       }
-      this.prepareMap();
     },
     async buildApplication() {
       if (this.fallbackProcedure === "manually") {
