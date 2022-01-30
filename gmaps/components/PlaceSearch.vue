@@ -7,22 +7,26 @@
     </div>
     <div id="pac-card">
       <input
-          id="pac-input"
-          v-bind:placeholder="placeholder"
-          type="text"
-          v-model="query"
+        id="pac-input"
+        v-bind:placeholder="placeholder"
+        type="text"
+        v-model="query"
       />
-      <div class="location-by-gps-btn" :class="{searching: searching_gps}" @click.prevent="getLocationViaGPS"></div>
+      <div
+        class="location-by-gps-btn"
+        :class="{ searching: searching_gps }"
+        @click.prevent="getLocationViaGPS"
+      ></div>
     </div>
     <div id="infowindow-content">
       <!-- /.prova -->
       <span id="place-name" class="title">{{
-          place != null ? place.name : ""
-        }}</span
-      ><br/>
+        place != null ? place.name : ""
+      }}</span
+      ><br />
       <span id="place-address">{{
-          place != null ? place.formatted_address : ""
-        }}</span>
+        place != null ? place.formatted_address : ""
+      }}</span>
     </div>
   </div>
   <!-- /#mapHolder -->
@@ -40,7 +44,7 @@ export default {
     },
     loading: String,
     placeholder: String,
-    fallbackProcedure: String,
+    fallbackProcedure: String, // extra location-given
     zoom: Number,
     geolocation: Object,
     gps_timeout: {
@@ -49,6 +53,15 @@ export default {
     },
     address: Object,
     manually: Object,
+    mapOnly: {
+      type: Boolean,
+      default: false,
+    },
+    placeList: {
+      type: Array,
+      default: () => [],
+    },
+    locationGiven: Object, // {lat: 0, lng: 0 }
   },
   data() {
     return {
@@ -92,8 +105,8 @@ export default {
         for (const key in this.placeAddresCompoponent) {
           this.$set;
           this[key] = this.getAddressComponent(
-              this.place.address_components,
-              this.placeAddresCompoponent[key]
+            this.place.address_components,
+            this.placeAddresCompoponent[key]
           );
         }
 
@@ -131,6 +144,7 @@ export default {
       this.map = new window.google.maps.Map(document.getElementById("map"), {
         center: geolocation,
         zoom: zoom,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapTypeControlOptions: {
           position: window.google.maps.ControlPosition.BOTTOM_LEFT,
         },
@@ -173,16 +187,16 @@ export default {
     getPlaceDetails(id, callback) {
       var service = new window.google.maps.places.PlacesService(this.map);
       service.getDetails(
-          {
-            placeId: id,
-            fields: [
-              "address_components",
-              "formatted_address",
-              "geometry",
-              "name",
-            ],
-          },
-          callback
+        {
+          placeId: id,
+          fields: [
+            "address_components",
+            "formatted_address",
+            "geometry",
+            "name",
+          ],
+        },
+        callback
       );
     },
     watchCityAndCountryChange() {
@@ -194,7 +208,7 @@ export default {
             this.address_description = this.place.formatted_address;
           } else {
             this.address_description =
-                this.place.name + ", " + this.place.formatted_address;
+              this.place.name + ", " + this.place.formatted_address;
           }
         }
       }
@@ -202,7 +216,7 @@ export default {
     getAddressComponent(address_components, key) {
       var value = "";
       var postalCodeType = address_components.filter((aComp) =>
-          aComp.types.some((typesItem) => typesItem === key)
+        aComp.types.some((typesItem) => typesItem === key)
       );
       if (postalCodeType != null && postalCodeType.length > 0)
         value = postalCodeType[0].long_name;
@@ -210,15 +224,15 @@ export default {
     },
     initMapByCoordinates(lat, lng, override_zoom = null) {
       let zoom =
-          this.geolocation.zoom != undefined
-              ? this.geolocation.zoom
-              : this.default_zoom;
+        this.geolocation.zoom != undefined
+          ? this.geolocation.zoom
+          : this.default_zoom;
 
       if (override_zoom != null) {
         zoom = override_zoom;
       }
 
-      this.createMap({lat: lat, lng: lng}, zoom);
+      this.createMap({ lat: lat, lng: lng }, zoom);
       this.findNearestPlace();
       this.prepareMap();
       //Create Marker
@@ -242,7 +256,7 @@ export default {
 
       this.emitData();
 
-      this.createMap({lat: this.lat, lng: this.lng}, this.manually.zoom);
+      this.createMap({ lat: this.lat, lng: this.lng }, this.manually.zoom);
       this.prepareMap();
       //Create Marker
       this.createMarker();
@@ -255,9 +269,9 @@ export default {
     initMapByAddress() {
       let geocoder = new window.google.maps.Geocoder();
       let zoom =
-          this.address.zoom != undefined ? this.address.zoom : this.default_zoom;
+        this.address.zoom != undefined ? this.address.zoom : this.default_zoom;
 
-      geocoder.geocode({address: this.query_address}, (results, status) => {
+      geocoder.geocode({ address: this.query_address }, (results, status) => {
         if (status == window.google.maps.GeocoderStatus.OK) {
           this.createMap(results[0].geometry.location, zoom);
           this.place = results[0];
@@ -268,12 +282,11 @@ export default {
         }
       });
     },
-    createMarker(latlng = null) {
+    createMarker(latlng = null, draggable = true) {
       if (this.marker == null) {
         this.marker = new window.google.maps.Marker({
           map: this.map,
-          draggable: true,
-          zIndex: 100001,
+          draggable: draggable,
           anchorPoint: new window.google.maps.Point(0, -29),
         });
 
@@ -292,6 +305,71 @@ export default {
           this.hideInfoWindow();
         });
       }
+    },
+
+    placeMarkersOnMap(places) {
+      const map = new window.google.maps.Map(document.getElementById("map"), {
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControlOptions: {
+          position: window.google.maps.ControlPosition.BOTTOM_LEFT,
+        },
+      });
+      // Loop through our array of places each one on the map
+      // places [{title: "", coordinates: [lat,lng], info: ""}...]
+      if (places.length > 0) {
+        const bounds = new window.google.maps.LatLngBounds();
+        places.forEach((place) => {
+          const position = {
+            lat: place.coordinates[0],
+            lng: place.coordinates[1],
+          };
+          // Stretch our bounds to the newly found marker position
+          bounds.extend(position);
+
+          const marker = new window.google.maps.Marker({
+            position: position,
+            map: map,
+            title: place.title,
+            draggable: false,
+            anchorPoint: new window.google.maps.Point(0, -29),
+          });
+
+          this.newMerkerBubble(marker, place);
+          // Automatically center the map fitting all markers on the screen
+          if (places.length > 1) {
+            map.fitBounds(bounds);
+          } else {
+            map.setCenter({
+              lat: places[0].coordinates[0],
+              lng: places[0].coordinates[1],
+            });
+            map.setZoom(13);
+          }
+        });
+      } else {
+        console.warn("No places given.. check placeList prop...");
+      }
+    },
+    newMerkerBubble(marker, place) {
+      const infoWindow = new window.google.maps.InfoWindow();
+      // Allow each marker to have an info window
+      window.google.maps.event.addListener(marker, "click", () => {
+        infoWindow.setContent(`<div class="card border-0 d-flex flex-row">
+            ${
+              place.logo
+                ? `<img src="${place.logo}" class="card-img-top rounded-circle w-25 h-25" alt="logo">`
+                : ""
+            }
+            <div class="card-body">
+              <h5 class="card-title">${
+                place.link
+                  ? `<a href="${place.link}" class="card-link">${place.title}</a>`
+                  : `${place.title}`
+              }</h5>
+              <p class="card-text">${place.info}</p>
+            </div></div>`);
+        infoWindow.open({ anchor: marker, map, shouldFocus: false });
+      });
     },
     repositionMarker(latlng) {
       this.lat = latlng.lat();
@@ -314,7 +392,9 @@ export default {
       this.infowindow.open(this.map, this.marker);
     },
     hideInfoWindow() {
-      this.infowindow.close();
+      if (this.infowindow) {
+        this.infowindow.close();
+      }
     },
     generateSearchCard() {
       const card = document.getElementById("pac-card");
@@ -328,11 +408,11 @@ export default {
         // types: ["address"],
       };
       this.map.controls[window.google.maps.ControlPosition.TOP_RIGHT].push(
-          card
+        card
       );
       const autocomplete = new window.google.maps.places.Autocomplete(
-          input,
-          options
+        input,
+        options
       );
 
       // Bind the map's bounds (viewport) property to the autocomplete object,
@@ -370,41 +450,91 @@ export default {
       });
     },
     prepareMap() {
-      //Adds the serach card, created a marked and creates the info window
-      //Bind map events
-      window.google.maps.event.addListener(this.map, "click", (e) => {
-        //Marker re position
-        this.repositionMarker(e["latLng"]);
-        //Hide info window
-        this.hideInfoWindow();
-      });
-
-      this.generateSearchCard();
-      this.createInfoWindow();
+      if (this.mapOnly) {
+        if (this.placeList.length === 0) {
+          if (this.locationGiven) {
+            const placeList = [
+              {
+                coordinates: [this.locationGiven.lat, this.locationGiven.lng],
+                title: this.locationGiven.title,
+                info: this.locationGiven.info,
+                link: this.locationGiven.link,
+                logo: this.locationGiven.logo,
+              },
+            ];
+            this.placeMarkersOnMap(placeList);
+          } else {
+            console.warn(
+              "if mapOnly prop set to true, then you should provide either placeList or locationGiven prop..."
+            );
+          }
+        } else {
+          this.placeMarkersOnMap(this.placeList);
+        }
+      } else {
+        //Adds the serach card, created a marked and creates the info window
+        //Bind map events
+        window.google.maps.event.addListener(this.map, "click", (e) => {
+          //Marker re position
+          this.repositionMarker(e["latLng"]);
+          //Hide info window
+          this.hideInfoWindow();
+        });
+        this.generateSearchCard();
+        this.createInfoWindow();
+      }
     },
+
     emitData() {
       this.$emit("changed", this.returnData());
     },
+
     //Get location via GPS
     getLocationViaGPS() {
       this.searching_gps = true;
-      this.$getLocation({timeout: this.gps_timeout}).then((coordinates) => {
-        this.lat = coordinates.lat;
-        this.lng = coordinates.lng;
+      this.$getLocation({ timeout: this.gps_timeout })
+        .then((coordinates) => {
+          this.lat = coordinates.lat;
+          this.lng = coordinates.lng;
 
-        this.findNearestPlace();
+          this.findNearestPlace();
 
-        this.marker.setPosition({
-          lat: this.lat,
-          lng: this.lng,
+          this.marker.setPosition({
+            lat: this.lat,
+            lng: this.lng,
+          });
+
+          this.map.panTo(new window.google.maps.LatLng(this.lat, this.lng));
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+        .finally(() => {
+          this.searching_gps = false;
         });
-
-        this.map.panTo(new window.google.maps.LatLng(this.lat, this.lng));
-      }).catch((error) => {
-        console.log(error);
-      }).finally(() => {
-        this.searching_gps = false;
-      });
+    },
+    //Get location via props
+    getLocationViaGivenLatLong() {
+      const location = this.locationGiven;
+      if (this.placeList.length === 0 && location) {
+        this.createMap(location, this.zoom);
+        if (
+          location.lat !== undefined &&
+          location.lng !== undefined &&
+          location.lat !== null &&
+          location.lng !== null
+        ) {
+          this.lat = location.lat;
+          this.lng = location.lng;
+          this.createMarker(location, false);
+          this.marker.setPosition(location);
+          this.newMerkerBubble(this.marker, location);
+          this.map.panTo(new window.google.maps.LatLng(location));
+        } else {
+          console.warn("Given Location {lat: lng: } value missing");
+        }
+      }
+      this.prepareMap();
     },
     async buildApplication() {
       if (this.fallbackProcedure === "manually") {
@@ -413,24 +543,29 @@ export default {
         this.initMapByCoordinates(this.lat, this.lng);
       } else if (this.fallbackProcedure === "address") {
         this.initMapByAddress();
+      } else if (this.fallbackProcedure === "location-given") {
+        this.getLocationViaGivenLatLong();
       } else {
         this.searching_gps = true;
-        this.$getLocation({timeout: this.gps_timeout}).then((coordinates) => {
-          this.lat = coordinates.lat;
-          this.lng = coordinates.lng;
-          this.initMapByCoordinates(this.lat, this.lng, this.zoom);
-          //Create Marker
-          this.createMarker();
+        this.$getLocation({ timeout: this.gps_timeout })
+          .then((coordinates) => {
+            this.lat = coordinates.lat;
+            this.lng = coordinates.lng;
+            this.initMapByCoordinates(this.lat, this.lng, this.zoom);
+            //Create Marker
+            this.createMarker();
 
-          this.marker.setPosition({
-            lat: this.lat,
-            lng: this.lng,
+            this.marker.setPosition({
+              lat: this.lat,
+              lng: this.lng,
+            });
+          })
+          .catch(() => {
+            this.initMapByAddress();
+          })
+          .finally(() => {
+            this.searching_gps = false;
           });
-        }).catch(() => {
-          this.initMapByAddress();
-        }).finally(() => {
-          this.searching_gps = false;
-        });
       }
     },
   },
@@ -550,7 +685,7 @@ export default {
         &:after {
           display: block;
           border-radius: 30px;
-          background-color: #FDF6E3;
+          background-color: #fdf6e3;
           content: "";
           width: 100%;
           height: 100%;

@@ -35,7 +35,7 @@ This plugin integrates google places into your vue3 application. It uses browser
   zip_code: "1001" //Sometime comes as null
 }
 ```
-   
+
 ## Installation
 
 ```
@@ -88,6 +88,9 @@ app.mount("#app");
   v-bind:geolocation="geolocation"
   v-bind:gps_timeout="3000"
   v-bind:address="address"
+  v-bind:map-only="mapOnly"
+  v-bind:location-given="locationGiven"
+  v-bind:place-list="placeList"
   @changed="getMapData"
 >
 </PlaceSearch>
@@ -105,7 +108,10 @@ export default {
       // **manually**: manually preset values
 
       // If GPS is selected as a fallbackProcedure and it fails , then address fallback is triggered and if address fails geolocation is triggered
-      fallbackProcedure: "gps", //gps | geolocation | address | manually
+      fallbackProcedure: "location-given", //gps | geolocation | address | manually | location-given
+      mapOnly: false,  // remove top search autocomplete bar,
+      locationGiven: { lat: 50.7022222, lng: -120.4419444, title: "", info:"", link: "", logo:""}, // only works once fallbackProcedure is location-given.
+      placeList: [], // [{coordinates: [49.1950000,-123.1819444],title:'Vancouver (YVR)',logo:'https://ui-avatars.com/api/?name=Vancouver (YVR)', link:'https://ui-avatars.com/api/?name=Vancouver (YVR)', info:'Vancouver Int\'l',color:'red',icon:'circle'},{coordinates:[48.6469444,-123.4258333],title:'Victoria (YYJ)',info:'Victoria Int\'l',color:'red',icon:'triangle'},{coordinates:[50.7022222,-120.4419444],title:'Kamloops (YKA)',info:'YKA, Kamloops, BC',color:'red',icon:'triangle'},{coordinates:[47.4488889,-122.3091667],title:'Seattle (SEA)',info:'Seattle Tacoma Int\'l',color:'cyan',icon:'circle'},{coordinates:[48.7925000,-122.5375000],title:'Bellingham (BLI)',info:'Bellingham Int\'l',color:'cyan',icon:'triangle'},{coordinates:[46.9666667,-122.9000000],title:'Olympia (OLM)',info:'OLM, Olympia, WA',color:'cyan',icon:'triangle'},{coordinates:[45.5894400,-122.6068200],title:'Portland (PDX)',info:'Portland Int\'l',color:'lime',icon:'circle'},{coordinates:[44.1166667,-123.2166667],title:'Eugene (EUG)',info:'Mahlon Sweet Field',color:'lime',icon:'triangle'},{coordinates:[44.2541600,-121.1505100],title:'Redmond (RDM)',info:'Roberts Field',color:'lime',icon:'triangle'}],
       zoom: 17, //Default Zoom
       geolocation: {
         // If GPS and Find by address fails then, map will be positioned by a default geolocation

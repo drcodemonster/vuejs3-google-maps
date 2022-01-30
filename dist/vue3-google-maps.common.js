@@ -225,6 +225,22 @@ module.exports = function (obj) {
 
 /***/ }),
 
+/***/ "0870":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("2d30");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("b8fd800a", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "0b42":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -291,19 +307,32 @@ module.exports = function (argument) {
 
 /***/ }),
 
-/***/ "1014":
+/***/ "159b":
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
+var global = __webpack_require__("da84");
+var DOMIterables = __webpack_require__("fdbc");
+var DOMTokenListPrototype = __webpack_require__("785a");
+var forEach = __webpack_require__("17c2");
+var createNonEnumerableProperty = __webpack_require__("9112");
 
-// load the styles
-var content = __webpack_require__("5c46");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("f7d73628", content, true, {"sourceMap":false,"shadowMode":false});
+var handlePrototype = function (CollectionPrototype) {
+  // some Chrome versions have non-configurable methods on DOMTokenList
+  if (CollectionPrototype && CollectionPrototype.forEach !== forEach) try {
+    createNonEnumerableProperty(CollectionPrototype, 'forEach', forEach);
+  } catch (error) {
+    CollectionPrototype.forEach = forEach;
+  }
+};
+
+for (var COLLECTION_NAME in DOMIterables) {
+  if (DOMIterables[COLLECTION_NAME]) {
+    handlePrototype(global[COLLECTION_NAME] && global[COLLECTION_NAME].prototype);
+  }
+}
+
+handlePrototype(DOMTokenListPrototype);
+
 
 /***/ }),
 
@@ -315,6 +344,26 @@ var update = add("f7d73628", content, true, {"sourceMap":false,"shadowMode":fals
 module.exports = function (argument) {
   return typeof argument == 'function';
 };
+
+
+/***/ }),
+
+/***/ "17c2":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $forEach = __webpack_require__("b727").forEach;
+var arrayMethodIsStrict = __webpack_require__("a640");
+
+var STRICT_METHOD = arrayMethodIsStrict('forEach');
+
+// `Array.prototype.forEach` method implementation
+// https://tc39.es/ecma262/#sec-array.prototype.foreach
+module.exports = !STRICT_METHOD ? function forEach(callbackfn /* , thisArg */) {
+  return $forEach(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+// eslint-disable-next-line es/no-array-prototype-foreach -- safe
+} : [].forEach;
 
 
 /***/ }),
@@ -1027,6 +1076,25 @@ if (!version && userAgent) {
 }
 
 module.exports = version;
+
+
+/***/ }),
+
+/***/ "2d30":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__("1de5");
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__("bbc5");
+var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__("4d66");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
+// Module
+exports.push([module.i, "#mapHolder{position:relative}#mapHolder,#mapHolder #map,#mapHolder #map .loading{width:100%;height:100%;float:left}#mapHolder #map .loading{background-color:#ededed;position:realtive}#mapHolder #map .loading .text{width:100%;padding:15px;text-align:center;position:absolute;top:50%;transform:translateY(-50%)}#mapHolder #map iframe{width:100%;height:100%}#mapHolder #map #infowindow-content,#mapHolder #map #pac-card{display:block}@-webkit-keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}@keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}#mapHolder #pac-card{background:#ededed;padding:10px;width:100%;height:auto;display:none;position:relative}#mapHolder #pac-card input{width:100%;line-height:30px;border-radius:5px;background-color:#fff;border:0;outline:0;padding:5px 40px 5px 40px;font-size:14px;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");background-size:auto 15px;background-repeat:no-repeat;background-position:left 15px center}#mapHolder #pac-card .location-by-gps-btn{position:absolute;width:30px;height:30px;top:50%;transform:translateY(-50%);right:15px}#mapHolder #pac-card .location-by-gps-btn:hover{cursor:pointer}#mapHolder #pac-card .location-by-gps-btn:before{display:block;content:\"\";width:100%;height:100%;position:absolute;top:0;left:0;z-index:2;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");background-position:50%;background-repeat:no-repeat;background-size:18px auto;border-radius:30px}#mapHolder #pac-card .location-by-gps-btn.searching:after{display:block;border-radius:30px;background-color:#fdf6e3;content:\"\";width:100%;height:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;-webkit-animation-name:gps-searching-animation;animation-name:gps-searching-animation;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-duration:1s;animation-duration:1s}#mapHolder #infowindow-content{width:100%;float:left;display:none}", ""]);
+// Exports
+module.exports = exports;
 
 
 /***/ }),
@@ -1892,25 +1960,6 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ "5c46":
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
-var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__("1de5");
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__("bbc5");
-var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__("4d66");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
-var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
-// Module
-exports.push([module.i, "#mapHolder{position:relative}#mapHolder,#mapHolder #map,#mapHolder #map .loading{width:100%;height:100%;float:left}#mapHolder #map .loading{background-color:#ededed;position:realtive}#mapHolder #map .loading .text{width:100%;padding:15px;text-align:center;position:absolute;top:50%;transform:translateY(-50%)}#mapHolder #map iframe{width:100%;height:100%}#mapHolder #map #infowindow-content,#mapHolder #map #pac-card{display:block}@-webkit-keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}@keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}#mapHolder #pac-card{background:#ededed;padding:10px;width:100%;height:auto;display:none;position:relative}#mapHolder #pac-card input{width:100%;line-height:30px;border-radius:5px;background-color:#fff;border:0;outline:0;padding:5px 40px 5px 40px;font-size:14px;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");background-size:auto 15px;background-repeat:no-repeat;background-position:left 15px center}#mapHolder #pac-card .location-by-gps-btn{position:absolute;width:30px;height:30px;top:50%;transform:translateY(-50%);right:15px}#mapHolder #pac-card .location-by-gps-btn:hover{cursor:pointer}#mapHolder #pac-card .location-by-gps-btn:before{display:block;content:\"\";width:100%;height:100%;position:absolute;top:0;left:0;z-index:2;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");background-position:50%;background-repeat:no-repeat;background-size:18px auto;border-radius:30px}#mapHolder #pac-card .location-by-gps-btn.searching:after{display:block;border-radius:30px;background-color:#fdf6e3;content:\"\";width:100%;height:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;-webkit-animation-name:gps-searching-animation;animation-name:gps-searching-animation;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-duration:1s;animation-duration:1s}#mapHolder #infowindow-content{width:100%;float:left;display:none}", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-
 /***/ "5c6c":
 /***/ (function(module, exports) {
 
@@ -2030,17 +2079,6 @@ module.exports = !$assign || fails(function () {
     }
   } return T;
 } : $assign;
-
-
-/***/ }),
-
-/***/ "63ae":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_4e655e6e_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("1014");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_4e655e6e_lang_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_4e655e6e_lang_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
 
 
 /***/ }),
@@ -2669,6 +2707,28 @@ module.exports = function (object, key, value) {
 
 /***/ }),
 
+/***/ "857a":
+/***/ (function(module, exports, __webpack_require__) {
+
+var uncurryThis = __webpack_require__("e330");
+var requireObjectCoercible = __webpack_require__("1d80");
+var toString = __webpack_require__("577e");
+
+var quot = /"/g;
+var replace = uncurryThis(''.replace);
+
+// `CreateHTML` abstract operation
+// https://tc39.es/ecma262/#sec-createhtml
+module.exports = function (string, tag, attribute, value) {
+  var S = toString(requireObjectCoercible(string));
+  var p1 = '<' + tag;
+  if (attribute !== '') p1 += ' ' + attribute + '="' + replace(toString(value), quot, '&quot;') + '"';
+  return p1 + '>' + S + '</' + tag + '>';
+};
+
+
+/***/ }),
+
 /***/ "861d":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2783,6 +2843,17 @@ if (!isCallable(store.inspectSource)) {
 }
 
 module.exports = store.inspectSource;
+
+
+/***/ }),
+
+/***/ "8a88":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_08307dd2_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("0870");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_08307dd2_lang_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_08307dd2_lang_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
 
 
 /***/ }),
@@ -3617,6 +3688,97 @@ try {
 
 /***/ }),
 
+/***/ "9911":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__("23e7");
+var createHTML = __webpack_require__("857a");
+var forcedStringHTMLMethod = __webpack_require__("af03");
+
+// `String.prototype.link` method
+// https://tc39.es/ecma262/#sec-string.prototype.link
+$({ target: 'String', proto: true, forced: forcedStringHTMLMethod('link') }, {
+  link: function link(url) {
+    return createHTML(this, 'a', 'href', url);
+  }
+});
+
+
+/***/ }),
+
+/***/ "99af":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__("23e7");
+var global = __webpack_require__("da84");
+var fails = __webpack_require__("d039");
+var isArray = __webpack_require__("e8b5");
+var isObject = __webpack_require__("861d");
+var toObject = __webpack_require__("7b0b");
+var lengthOfArrayLike = __webpack_require__("07fa");
+var createProperty = __webpack_require__("8418");
+var arraySpeciesCreate = __webpack_require__("65f0");
+var arrayMethodHasSpeciesSupport = __webpack_require__("1dde");
+var wellKnownSymbol = __webpack_require__("b622");
+var V8_VERSION = __webpack_require__("2d00");
+
+var IS_CONCAT_SPREADABLE = wellKnownSymbol('isConcatSpreadable');
+var MAX_SAFE_INTEGER = 0x1FFFFFFFFFFFFF;
+var MAXIMUM_ALLOWED_INDEX_EXCEEDED = 'Maximum allowed index exceeded';
+var TypeError = global.TypeError;
+
+// We can't use this feature detection in V8 since it causes
+// deoptimization and serious performance degradation
+// https://github.com/zloirock/core-js/issues/679
+var IS_CONCAT_SPREADABLE_SUPPORT = V8_VERSION >= 51 || !fails(function () {
+  var array = [];
+  array[IS_CONCAT_SPREADABLE] = false;
+  return array.concat()[0] !== array;
+});
+
+var SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('concat');
+
+var isConcatSpreadable = function (O) {
+  if (!isObject(O)) return false;
+  var spreadable = O[IS_CONCAT_SPREADABLE];
+  return spreadable !== undefined ? !!spreadable : isArray(O);
+};
+
+var FORCED = !IS_CONCAT_SPREADABLE_SUPPORT || !SPECIES_SUPPORT;
+
+// `Array.prototype.concat` method
+// https://tc39.es/ecma262/#sec-array.prototype.concat
+// with adding support of @@isConcatSpreadable and @@species
+$({ target: 'Array', proto: true, forced: FORCED }, {
+  // eslint-disable-next-line no-unused-vars -- required for `.length`
+  concat: function concat(arg) {
+    var O = toObject(this);
+    var A = arraySpeciesCreate(O, 0);
+    var n = 0;
+    var i, k, length, len, E;
+    for (i = -1, length = arguments.length; i < length; i++) {
+      E = i === -1 ? O : arguments[i];
+      if (isConcatSpreadable(E)) {
+        len = lengthOfArrayLike(E);
+        if (n + len > MAX_SAFE_INTEGER) throw TypeError(MAXIMUM_ALLOWED_INDEX_EXCEEDED);
+        for (k = 0; k < len; k++, n++) if (k in E) createProperty(A, n, E[k]);
+      } else {
+        if (n >= MAX_SAFE_INTEGER) throw TypeError(MAXIMUM_ALLOWED_INDEX_EXCEEDED);
+        createProperty(A, n++, E);
+      }
+    }
+    A.length = n;
+    return A;
+  }
+});
+
+
+/***/ }),
+
 /***/ "9a1f":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4372,6 +4534,23 @@ module.exports = DESCRIPTORS && fails(function () {
     writable: false
   }).prototype != 42;
 });
+
+
+/***/ }),
+
+/***/ "af03":
+/***/ (function(module, exports, __webpack_require__) {
+
+var fails = __webpack_require__("d039");
+
+// check the existence of a method, lowercase
+// of a tag and escaping quotes in arguments
+module.exports = function (METHOD_NAME) {
+  return fails(function () {
+    var test = ''[METHOD_NAME]('"');
+    return test !== test.toLowerCase() || test.split('"').length > 3;
+  });
+};
 
 
 /***/ }),
@@ -6362,7 +6541,7 @@ var es_function_name = __webpack_require__("b0c0");
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./gmaps/components/PlaceSearch.vue?vue&type=template&id=4e655e6e
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./gmaps/components/PlaceSearch.vue?vue&type=template&id=08307dd2
 
 
 var _hoisted_1 = {
@@ -6411,7 +6590,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, ["prevent"]))
   }, null, 2)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", _hoisted_7, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", _hoisted_8, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.place != null ? $data.place.name : ""), 1), _hoisted_9, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", _hoisted_10, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.place != null ? $data.place.formatted_address : ""), 1)])]);
 }
-// CONCATENATED MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=template&id=4e655e6e
+// CONCATENATED MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=template&id=08307dd2
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
 
@@ -6467,10 +6646,22 @@ var es_string_includes = __webpack_require__("2532");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.filter.js
 var es_array_filter = __webpack_require__("4de4");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom-collections.for-each.js
+var web_dom_collections_for_each = __webpack_require__("159b");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.concat.js
+var es_array_concat = __webpack_require__("99af");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.link.js
+var es_string_link = __webpack_require__("9911");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.promise.finally.js
 var es_promise_finally = __webpack_require__("a79d");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./gmaps/components/PlaceSearch.vue?vue&type=script&lang=js
+
+
+
 
 
 
@@ -6493,6 +6684,7 @@ var es_promise_finally = __webpack_require__("a79d");
     loading: String,
     placeholder: String,
     fallbackProcedure: String,
+    // extra location-given
     zoom: Number,
     geolocation: Object,
     gps_timeout: {
@@ -6500,7 +6692,19 @@ var es_promise_finally = __webpack_require__("a79d");
       default: 5000
     },
     address: Object,
-    manually: Object
+    manually: Object,
+    mapOnly: {
+      type: Boolean,
+      default: false
+    },
+    placeList: {
+      type: Array,
+      default: function _default() {
+        return [];
+      }
+    },
+    locationGiven: Object // {lat: 0, lng: 0 }
+
   },
   data: function data() {
     return {
@@ -6581,6 +6785,7 @@ var es_promise_finally = __webpack_require__("a79d");
       this.map = new window.google.maps.Map(document.getElementById("map"), {
         center: geolocation,
         zoom: zoom,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
         mapTypeControlOptions: {
           position: window.google.maps.ControlPosition.BOTTOM_LEFT
         }
@@ -6721,12 +6926,12 @@ var es_promise_finally = __webpack_require__("a79d");
       var _this4 = this;
 
       var latlng = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var draggable = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
       if (this.marker == null) {
         this.marker = new window.google.maps.Marker({
           map: this.map,
-          draggable: true,
-          zIndex: 100001,
+          draggable: draggable,
           anchorPoint: new window.google.maps.Point(0, -29)
         });
 
@@ -6744,6 +6949,63 @@ var es_promise_finally = __webpack_require__("a79d");
           _this4.hideInfoWindow();
         });
       }
+    },
+    placeMarkersOnMap: function placeMarkersOnMap(places) {
+      var _this5 = this;
+
+      var map = new window.google.maps.Map(document.getElementById("map"), {
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControlOptions: {
+          position: window.google.maps.ControlPosition.BOTTOM_LEFT
+        }
+      }); // Loop through our array of places each one on the map
+      // places [{title: "", coordinates: [lat,lng], info: ""}...]
+
+      if (places.length > 0) {
+        var bounds = new window.google.maps.LatLngBounds();
+        places.forEach(function (place) {
+          var position = {
+            lat: place.coordinates[0],
+            lng: place.coordinates[1]
+          }; // Stretch our bounds to the newly found marker position
+
+          bounds.extend(position);
+          var marker = new window.google.maps.Marker({
+            position: position,
+            map: map,
+            title: place.title,
+            draggable: false,
+            anchorPoint: new window.google.maps.Point(0, -29)
+          });
+
+          _this5.newMerkerBubble(marker, place); // Automatically center the map fitting all markers on the screen
+
+
+          if (places.length > 1) {
+            map.fitBounds(bounds);
+          } else {
+            map.setCenter({
+              lat: places[0].coordinates[0],
+              lng: places[0].coordinates[1]
+            });
+            map.setZoom(13);
+          }
+        });
+      } else {
+        console.warn("No places given.. check placeList prop...");
+      }
+    },
+    newMerkerBubble: function newMerkerBubble(marker, place) {
+      var infoWindow = new window.google.maps.InfoWindow(); // Allow each marker to have an info window
+
+      window.google.maps.event.addListener(marker, "click", function () {
+        infoWindow.setContent("<div class=\"card border-0 d-flex flex-row\">\n            ".concat(place.logo ? "<img src=\"".concat(place.logo, "\" class=\"card-img-top rounded-circle w-25 h-25\" alt=\"logo\">") : "", "\n            <div class=\"card-body\">\n              <h5 class=\"card-title\">").concat(place.link ? "<a href=\"".concat(place.link, "\" class=\"card-link\">").concat(place.title, "</a>") : "".concat(place.title), "</h5>\n              <p class=\"card-text\">").concat(place.info, "</p>\n            </div></div>"));
+        infoWindow.open({
+          anchor: marker,
+          map: map,
+          shouldFocus: false
+        });
+      });
     },
     repositionMarker: function repositionMarker(latlng) {
       this.lat = latlng.lat();
@@ -6765,10 +7027,12 @@ var es_promise_finally = __webpack_require__("a79d");
       this.infowindow.open(this.map, this.marker);
     },
     hideInfoWindow: function hideInfoWindow() {
-      this.infowindow.close();
+      if (this.infowindow) {
+        this.infowindow.close();
+      }
     },
     generateSearchCard: function generateSearchCard() {
-      var _this5 = this;
+      var _this6 = this;
 
       var card = document.getElementById("pac-card");
       var input = document.getElementById("pac-input");
@@ -6788,9 +7052,9 @@ var es_promise_finally = __webpack_require__("a79d");
 
       this.createMarker();
       autocomplete.addListener("place_changed", function () {
-        _this5.hideInfoWindow();
+        _this6.hideInfoWindow();
 
-        _this5.marker.setVisible(false);
+        _this6.marker.setVisible(false);
 
         var place = autocomplete.getPlace();
 
@@ -6803,101 +7067,143 @@ var es_promise_finally = __webpack_require__("a79d");
 
 
         if (place.geometry.viewport) {
-          _this5.map.fitBounds(place.geometry.viewport);
+          _this6.map.fitBounds(place.geometry.viewport);
         } else {
-          _this5.map.setCenter(place.geometry.location);
+          _this6.map.setCenter(place.geometry.location);
 
-          _this5.map.setZoom(17);
+          _this6.map.setZoom(17);
         }
 
-        _this5.marker.setPosition(place.geometry.location);
+        _this6.marker.setPosition(place.geometry.location);
 
-        _this5.marker.setVisible(true);
+        _this6.marker.setVisible(true);
 
-        _this5.place = place;
+        _this6.place = place;
 
-        _this5.showInfoWindow();
+        _this6.showInfoWindow();
       });
     },
     prepareMap: function prepareMap() {
-      var _this6 = this;
+      var _this7 = this;
 
-      //Adds the serach card, created a marked and creates the info window
-      //Bind map events
-      window.google.maps.event.addListener(this.map, "click", function (e) {
-        //Marker re position
-        _this6.repositionMarker(e["latLng"]); //Hide info window
+      if (this.mapOnly) {
+        if (this.placeList.length === 0) {
+          if (this.locationGiven) {
+            var placeList = [{
+              coordinates: [this.locationGiven.lat, this.locationGiven.lng],
+              title: this.locationGiven.title,
+              info: this.locationGiven.info,
+              link: this.locationGiven.link,
+              logo: this.locationGiven.logo
+            }];
+            this.placeMarkersOnMap(placeList);
+          } else {
+            console.warn("if mapOnly prop set to true, then you should provide either placeList or locationGiven prop...");
+          }
+        } else {
+          this.placeMarkersOnMap(this.placeList);
+        }
+      } else {
+        //Adds the serach card, created a marked and creates the info window
+        //Bind map events
+        window.google.maps.event.addListener(this.map, "click", function (e) {
+          //Marker re position
+          _this7.repositionMarker(e["latLng"]); //Hide info window
 
 
-        _this6.hideInfoWindow();
-      });
-      this.generateSearchCard();
-      this.createInfoWindow();
+          _this7.hideInfoWindow();
+        });
+        this.generateSearchCard();
+        this.createInfoWindow();
+      }
     },
     emitData: function emitData() {
       this.$emit("changed", this.returnData());
     },
     //Get location via GPS
     getLocationViaGPS: function getLocationViaGPS() {
-      var _this7 = this;
+      var _this8 = this;
 
       this.searching_gps = true;
       this.$getLocation({
         timeout: this.gps_timeout
       }).then(function (coordinates) {
-        _this7.lat = coordinates.lat;
-        _this7.lng = coordinates.lng;
+        _this8.lat = coordinates.lat;
+        _this8.lng = coordinates.lng;
 
-        _this7.findNearestPlace();
+        _this8.findNearestPlace();
 
-        _this7.marker.setPosition({
-          lat: _this7.lat,
-          lng: _this7.lng
+        _this8.marker.setPosition({
+          lat: _this8.lat,
+          lng: _this8.lng
         });
 
-        _this7.map.panTo(new window.google.maps.LatLng(_this7.lat, _this7.lng));
+        _this8.map.panTo(new window.google.maps.LatLng(_this8.lat, _this8.lng));
       }).catch(function (error) {
         console.log(error);
       }).finally(function () {
-        _this7.searching_gps = false;
+        _this8.searching_gps = false;
       });
     },
+    //Get location via props
+    getLocationViaGivenLatLong: function getLocationViaGivenLatLong() {
+      var location = this.locationGiven;
+
+      if (this.placeList.length === 0 && location) {
+        this.createMap(location, this.zoom);
+
+        if (location.lat !== undefined && location.lng !== undefined && location.lat !== null && location.lng !== null) {
+          this.lat = location.lat;
+          this.lng = location.lng;
+          this.createMarker(location, false);
+          this.marker.setPosition(location);
+          this.newMerkerBubble(this.marker, location);
+          this.map.panTo(new window.google.maps.LatLng(location));
+        } else {
+          console.warn("Given Location {lat: lng: } value missing");
+        }
+      }
+
+      this.prepareMap();
+    },
     buildApplication: function buildApplication() {
-      var _this8 = this;
+      var _this9 = this;
 
       return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                if (_this8.fallbackProcedure === "manually") {
-                  _this8.initMapManually();
-                } else if (_this8.fallbackProcedure === "geolocation") {
-                  _this8.initMapByCoordinates(_this8.lat, _this8.lng);
-                } else if (_this8.fallbackProcedure === "address") {
-                  _this8.initMapByAddress();
+                if (_this9.fallbackProcedure === "manually") {
+                  _this9.initMapManually();
+                } else if (_this9.fallbackProcedure === "geolocation") {
+                  _this9.initMapByCoordinates(_this9.lat, _this9.lng);
+                } else if (_this9.fallbackProcedure === "address") {
+                  _this9.initMapByAddress();
+                } else if (_this9.fallbackProcedure === "location-given") {
+                  _this9.getLocationViaGivenLatLong();
                 } else {
-                  _this8.searching_gps = true;
+                  _this9.searching_gps = true;
 
-                  _this8.$getLocation({
-                    timeout: _this8.gps_timeout
+                  _this9.$getLocation({
+                    timeout: _this9.gps_timeout
                   }).then(function (coordinates) {
-                    _this8.lat = coordinates.lat;
-                    _this8.lng = coordinates.lng;
+                    _this9.lat = coordinates.lat;
+                    _this9.lng = coordinates.lng;
 
-                    _this8.initMapByCoordinates(_this8.lat, _this8.lng, _this8.zoom); //Create Marker
+                    _this9.initMapByCoordinates(_this9.lat, _this9.lng, _this9.zoom); //Create Marker
 
 
-                    _this8.createMarker();
+                    _this9.createMarker();
 
-                    _this8.marker.setPosition({
-                      lat: _this8.lat,
-                      lng: _this8.lng
+                    _this9.marker.setPosition({
+                      lat: _this9.lat,
+                      lng: _this9.lng
                     });
                   }).catch(function () {
-                    _this8.initMapByAddress();
+                    _this9.initMapByAddress();
                   }).finally(function () {
-                    _this8.searching_gps = false;
+                    _this9.searching_gps = false;
                   });
                 }
 
@@ -6911,7 +7217,7 @@ var es_promise_finally = __webpack_require__("a79d");
     }
   },
   mounted: function mounted() {
-    var _this9 = this;
+    var _this10 = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
       return regeneratorRuntime.wrap(function _callee2$(_context2) {
@@ -6922,7 +7228,7 @@ var es_promise_finally = __webpack_require__("a79d");
               return lib_loader.ensureReady();
 
             case 2:
-              if (!(_this9.ready != undefined && _this9.ready == false)) {
+              if (!(_this10.ready != undefined && _this10.ready == false)) {
                 _context2.next = 4;
                 break;
               }
@@ -6930,7 +7236,7 @@ var es_promise_finally = __webpack_require__("a79d");
               return _context2.abrupt("return");
 
             case 4:
-              _this9.buildApplication();
+              _this10.buildApplication();
 
             case 5:
             case "end":
@@ -6943,8 +7249,8 @@ var es_promise_finally = __webpack_require__("a79d");
 });
 // CONCATENATED MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=script&lang=js
  
-// EXTERNAL MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=style&index=0&id=4e655e6e&lang=scss
-var PlaceSearchvue_type_style_index_0_id_4e655e6e_lang_scss = __webpack_require__("63ae");
+// EXTERNAL MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=style&index=0&id=08307dd2&lang=scss
+var PlaceSearchvue_type_style_index_0_id_08307dd2_lang_scss = __webpack_require__("8a88");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader-v16/dist/exportHelper.js
 var exportHelper = __webpack_require__("6b0d");
