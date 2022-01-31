@@ -292,7 +292,6 @@ export default {
         this.marker = new window.google.maps.Marker({
           map: this.map,
           draggable: draggable,
-          anchorPoint: new window.google.maps.Point(0, -29),
         });
 
         if (latlng != null) {
@@ -336,7 +335,6 @@ export default {
             map: map,
             title: place.title,
             draggable: false,
-            anchorPoint: new window.google.maps.Point(0, -29),
           });
 
           this.newMerkerBubble(marker, place);
