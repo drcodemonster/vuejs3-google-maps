@@ -518,9 +518,13 @@ export default {
     },
     //Get location via props
     async getLocationViaGivenLatLong() {
-      const location = this.locationGiven;
+      let location = this.locationGiven;
+      if (!location.lat && !location.lng) {
+        location = this.geolocation;
+      }
+      await this.createMap(location, this.zoom);
+
       if (this.placeList.length === 0 && location) {
-        await this.createMap(location, this.zoom);
         if (
           location.lat !== undefined &&
           location.lng !== undefined &&
