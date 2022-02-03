@@ -227,7 +227,7 @@ export default {
         value = postalCodeType[0].long_name;
       return value;
     },
-    initMapByCoordinates(lat, lng, override_zoom = null) {
+    async initMapByCoordinates(lat, lng, override_zoom = null) {
       let zoom =
         this.geolocation.zoom != undefined
           ? this.geolocation.zoom
@@ -237,7 +237,7 @@ export default {
         zoom = override_zoom;
       }
 
-      this.createMap({ lat: lat, lng: lng }, zoom);
+      await this.createMap({ lat: lat, lng: lng }, zoom);
       this.findNearestPlace();
       this.prepareMap();
       //Create Marker
@@ -248,7 +248,7 @@ export default {
         lng: lng,
       });
     },
-    initMapManually() {
+    async initMapManually() {
       this.address_description = this.manually.address_description;
       this.city = this.manually.city;
       this.country = this.manually.country;
@@ -261,7 +261,7 @@ export default {
 
       this.emitData();
 
-      this.createMap({ lat: this.lat, lng: this.lng }, this.manually.zoom);
+      await this.createMap({ lat: this.lat, lng: this.lng }, this.manually.zoom);
       this.prepareMap();
       //Create Marker
       this.createMarker();
@@ -276,9 +276,9 @@ export default {
       let zoom =
         this.address.zoom != undefined ? this.address.zoom : this.default_zoom;
 
-      geocoder.geocode({ address: this.query_address }, (results, status) => {
+      geocoder.geocode({ address: this.query_address }, async (results, status) => {
         if (status == window.google.maps.GeocoderStatus.OK) {
-          this.createMap(results[0].geometry.location, zoom);
+          await this.createMap(results[0].geometry.location, zoom);
           this.place = results[0];
           this.prepareMap();
         } else {
@@ -452,7 +452,7 @@ export default {
         this.showInfoWindow();
       });
     },
-    prepareMap() {
+   async  prepareMap() {
       if (this.mapOnly) {
         if (this.placeList.length === 0) {
           if (this.locationGiven) {
@@ -477,6 +477,9 @@ export default {
       } else {
         //Adds the serach card, created a marked and creates the info window
         //Bind map events
+        if (!this.map) {
+           await this.createMap({ lat: this.lat, lng: this.lng }, this.manually.zoom);
+        }
         window.google.maps.event.addListener(this.map, "click", (e) => {
           //Marker re position
           this.repositionMarker(e["latLng"]);

@@ -152,25 +152,6 @@ module.exports = function (fn, that) {
 
 /***/ }),
 
-/***/ "0381":
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
-var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__("1de5");
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__("bbc5");
-var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__("4d66");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
-var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
-// Module
-exports.push([module.i, "#mapHolder{position:relative}#mapHolder,#mapHolder #map,#mapHolder #map .loading{width:100%;height:100%;float:left}#mapHolder #map .loading{background-color:#ededed;position:realtive}#mapHolder #map .loading .text{width:100%;padding:15px;text-align:center;position:absolute;top:50%;transform:translateY(-50%)}#mapHolder #map iframe{width:100%;height:100%}#mapHolder #map #infowindow-content,#mapHolder #map #pac-card{display:block}@-webkit-keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}@keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}#mapHolder #pac-card{background:#ededed;padding:10px;width:100%;height:auto;display:none;position:relative}#mapHolder #pac-card input{width:100%;line-height:30px;border-radius:5px;background-color:#fff;border:0;outline:0;padding:5px 40px 5px 40px;font-size:14px;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");background-size:auto 15px;background-repeat:no-repeat;background-position:left 15px center}#mapHolder #pac-card .location-by-gps-btn{position:absolute;width:30px;height:30px;top:50%;transform:translateY(-50%);right:15px}#mapHolder #pac-card .location-by-gps-btn:hover{cursor:pointer}#mapHolder #pac-card .location-by-gps-btn:before{display:block;content:\"\";width:100%;height:100%;position:absolute;top:0;left:0;z-index:2;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");background-position:50%;background-repeat:no-repeat;background-size:18px auto;border-radius:30px}#mapHolder #pac-card .location-by-gps-btn.searching:after{display:block;border-radius:30px;background-color:#fdf6e3;content:\"\";width:100%;height:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;-webkit-animation-name:gps-searching-animation;animation-name:gps-searching-animation;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-duration:1s;animation-duration:1s}#mapHolder #infowindow-content{width:100%;float:left;display:none}", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-
 /***/ "057f":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1112,6 +1093,22 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "36ad":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("d073");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("ee9db64a", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "37e8":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1784,17 +1781,6 @@ var min = Math.min;
 module.exports = function (argument) {
   return argument > 0 ? min(toIntegerOrInfinity(argument), 0x1FFFFFFFFFFFFF) : 0; // 2 ** 53 - 1 == 9007199254740991
 };
-
-
-/***/ }),
-
-/***/ "5176":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_9e5e7012_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("8217");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_9e5e7012_lang_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_9e5e7012_lang_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
 
 
 /***/ }),
@@ -2649,22 +2635,6 @@ var WeakMap = global.WeakMap;
 
 module.exports = isCallable(WeakMap) && /native code/.test(inspectSource(WeakMap));
 
-
-/***/ }),
-
-/***/ "8217":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("0381");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("21e5bae5", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -5143,6 +5113,25 @@ module.exports = function (namespace, method) {
 
 /***/ }),
 
+/***/ "d073":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__("1de5");
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__("bbc5");
+var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__("4d66");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
+// Module
+exports.push([module.i, "#mapHolder{position:relative}#mapHolder,#mapHolder #map,#mapHolder #map .loading{width:100%;height:100%;float:left}#mapHolder #map .loading{background-color:#ededed;position:realtive}#mapHolder #map .loading .text{width:100%;padding:15px;text-align:center;position:absolute;top:50%;transform:translateY(-50%)}#mapHolder #map iframe{width:100%;height:100%}#mapHolder #map #infowindow-content,#mapHolder #map #pac-card{display:block}@-webkit-keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}@keyframes gps-searching-animation{0%{width:50%;height:50%}to{width:100%;height:100%}}#mapHolder #pac-card{background:#ededed;padding:10px;width:100%;height:auto;display:none;position:relative}#mapHolder #pac-card input{width:100%;line-height:30px;border-radius:5px;background-color:#fff;border:0;outline:0;padding:5px 40px 5px 40px;font-size:14px;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");background-size:auto 15px;background-repeat:no-repeat;background-position:left 15px center}#mapHolder #pac-card .location-by-gps-btn{position:absolute;width:30px;height:30px;top:50%;transform:translateY(-50%);right:15px}#mapHolder #pac-card .location-by-gps-btn:hover{cursor:pointer}#mapHolder #pac-card .location-by-gps-btn:before{display:block;content:\"\";width:100%;height:100%;position:absolute;top:0;left:0;z-index:2;background-image:url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");background-position:50%;background-repeat:no-repeat;background-size:18px auto;border-radius:30px}#mapHolder #pac-card .location-by-gps-btn.searching:after{display:block;border-radius:30px;background-color:#fdf6e3;content:\"\";width:100%;height:100%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;-webkit-animation-name:gps-searching-animation;animation-name:gps-searching-animation;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-duration:1s;animation-duration:1s}#mapHolder #infowindow-content{width:100%;float:left;display:none}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "d1e7":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6244,6 +6233,17 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "ef93":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_273d407e_lang_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("36ad");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_273d407e_lang_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_9_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_9_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_9_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_9_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_v16_dist_index_js_ref_1_1_PlaceSearch_vue_vue_type_style_index_0_id_273d407e_lang_scss__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "f069":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6541,7 +6541,7 @@ var es_function_name = __webpack_require__("b0c0");
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./gmaps/components/PlaceSearch.vue?vue&type=template&id=9e5e7012
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./gmaps/components/PlaceSearch.vue?vue&type=template&id=273d407e
 
 
 var _hoisted_1 = {
@@ -6590,7 +6590,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, ["prevent"]))
   }, null, 2)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", _hoisted_7, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", _hoisted_8, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.place != null ? $data.place.name : ""), 1), _hoisted_9, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", _hoisted_10, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.place != null ? $data.place.formatted_address : ""), 1)])]);
 }
-// CONCATENATED MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=template&id=9e5e7012
+// CONCATENATED MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=template&id=273d407e
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js
 
@@ -6866,71 +6866,142 @@ var es_promise_finally = __webpack_require__("a79d");
       return value;
     },
     initMapByCoordinates: function initMapByCoordinates(lat, lng) {
-      var override_zoom = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
-      var zoom = this.geolocation.zoom != undefined ? this.geolocation.zoom : this.default_zoom;
+      var _arguments = arguments,
+          _this4 = this;
 
-      if (override_zoom != null) {
-        zoom = override_zoom;
-      }
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        var override_zoom, zoom;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                override_zoom = _arguments.length > 2 && _arguments[2] !== undefined ? _arguments[2] : null;
+                zoom = _this4.geolocation.zoom != undefined ? _this4.geolocation.zoom : _this4.default_zoom;
 
-      this.createMap({
-        lat: lat,
-        lng: lng
-      }, zoom);
-      this.findNearestPlace();
-      this.prepareMap(); //Create Marker
+                if (override_zoom != null) {
+                  zoom = override_zoom;
+                }
 
-      this.createMarker();
-      this.marker.setPosition({
-        lat: lat,
-        lng: lng
-      });
+                _context.next = 5;
+                return _this4.createMap({
+                  lat: lat,
+                  lng: lng
+                }, zoom);
+
+              case 5:
+                _this4.findNearestPlace();
+
+                _this4.prepareMap(); //Create Marker
+
+
+                _this4.createMarker();
+
+                _this4.marker.setPosition({
+                  lat: lat,
+                  lng: lng
+                });
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     },
     initMapManually: function initMapManually() {
-      this.address_description = this.manually.address_description;
-      this.city = this.manually.city;
-      this.country = this.manually.country;
-      this.lat = this.manually.lat;
-      this.lng = this.manually.lng;
-      this.state = this.manually.state;
-      this.zip_code = this.manually.zip_code;
-      this.lat = this.manually.lat;
-      this.lng = this.manually.lng;
-      this.emitData();
-      this.createMap({
-        lat: this.lat,
-        lng: this.lng
-      }, this.manually.zoom);
-      this.prepareMap(); //Create Marker
+      var _this5 = this;
 
-      this.createMarker();
-      this.marker.setPosition({
-        lat: this.lat,
-        lng: this.lng
-      });
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this5.address_description = _this5.manually.address_description;
+                _this5.city = _this5.manually.city;
+                _this5.country = _this5.manually.country;
+                _this5.lat = _this5.manually.lat;
+                _this5.lng = _this5.manually.lng;
+                _this5.state = _this5.manually.state;
+                _this5.zip_code = _this5.manually.zip_code;
+                _this5.lat = _this5.manually.lat;
+                _this5.lng = _this5.manually.lng;
+
+                _this5.emitData();
+
+                _context2.next = 12;
+                return _this5.createMap({
+                  lat: _this5.lat,
+                  lng: _this5.lng
+                }, _this5.manually.zoom);
+
+              case 12:
+                _this5.prepareMap(); //Create Marker
+
+
+                _this5.createMarker();
+
+                _this5.marker.setPosition({
+                  lat: _this5.lat,
+                  lng: _this5.lng
+                });
+
+              case 15:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     },
     initMapByAddress: function initMapByAddress() {
-      var _this4 = this;
+      var _this6 = this;
 
       var geocoder = new window.google.maps.Geocoder();
       var zoom = this.address.zoom != undefined ? this.address.zoom : this.default_zoom;
       geocoder.geocode({
         address: this.query_address
-      }, function (results, status) {
-        if (status == window.google.maps.GeocoderStatus.OK) {
-          _this4.createMap(results[0].geometry.location, zoom);
+      }, /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(results, status) {
+          return regeneratorRuntime.wrap(function _callee3$(_context3) {
+            while (1) {
+              switch (_context3.prev = _context3.next) {
+                case 0:
+                  if (!(status == window.google.maps.GeocoderStatus.OK)) {
+                    _context3.next = 7;
+                    break;
+                  }
 
-          _this4.place = results[0];
+                  _context3.next = 3;
+                  return _this6.createMap(results[0].geometry.location, zoom);
 
-          _this4.prepareMap();
-        } else {
-          //Use default lat long
-          _this4.initMapByCoordinates(_this4.lat, _this4.lng, 5);
-        }
-      });
+                case 3:
+                  _this6.place = results[0];
+
+                  _this6.prepareMap();
+
+                  _context3.next = 8;
+                  break;
+
+                case 7:
+                  //Use default lat long
+                  _this6.initMapByCoordinates(_this6.lat, _this6.lng, 5);
+
+                case 8:
+                case "end":
+                  return _context3.stop();
+              }
+            }
+          }, _callee3);
+        }));
+
+        return function (_x, _x2) {
+          return _ref.apply(this, arguments);
+        };
+      }());
     },
     createMarker: function createMarker() {
-      var _this5 = this;
+      var _this7 = this;
 
       var latlng = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
       var draggable = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
@@ -6947,17 +7018,17 @@ var es_promise_finally = __webpack_require__("a79d");
 
 
         window.google.maps.event.addListener(this.marker, "dragend", function () {
-          _this5.lat = _this5.marker.getPosition().lat();
-          _this5.lng = _this5.marker.getPosition().lng();
+          _this7.lat = _this7.marker.getPosition().lat();
+          _this7.lng = _this7.marker.getPosition().lng();
         }); //Get markes position on move
 
         window.google.maps.event.addListener(this.marker, "dragstart", function () {
-          _this5.hideInfoWindow();
+          _this7.hideInfoWindow();
         });
       }
     },
     placeMarkersOnMap: function placeMarkersOnMap(places) {
-      var _this6 = this;
+      var _this8 = this;
 
       var map = new window.google.maps.Map(document.getElementById("map"), {
         mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -6983,7 +7054,7 @@ var es_promise_finally = __webpack_require__("a79d");
             draggable: false
           });
 
-          _this6.newMerkerBubble(marker, place); // Automatically center the map fitting all markers on the screen
+          _this8.newMerkerBubble(marker, place); // Automatically center the map fitting all markers on the screen
 
 
           if (places.length > 1) {
@@ -7037,7 +7108,7 @@ var es_promise_finally = __webpack_require__("a79d");
       }
     },
     generateSearchCard: function generateSearchCard() {
-      var _this7 = this;
+      var _this9 = this;
 
       var card = document.getElementById("pac-card");
       var input = document.getElementById("pac-input");
@@ -7057,9 +7128,9 @@ var es_promise_finally = __webpack_require__("a79d");
 
       this.createMarker();
       autocomplete.addListener("place_changed", function () {
-        _this7.hideInfoWindow();
+        _this9.hideInfoWindow();
 
-        _this7.marker.setVisible(false);
+        _this9.marker.setVisible(false);
 
         var place = autocomplete.getPlace();
 
@@ -7072,218 +7143,252 @@ var es_promise_finally = __webpack_require__("a79d");
 
 
         if (place.geometry.viewport) {
-          _this7.map.fitBounds(place.geometry.viewport);
+          _this9.map.fitBounds(place.geometry.viewport);
         } else {
-          _this7.map.setCenter(place.geometry.location);
+          _this9.map.setCenter(place.geometry.location);
 
-          _this7.map.setZoom(17);
+          _this9.map.setZoom(17);
         }
 
-        _this7.marker.setPosition(place.geometry.location);
+        _this9.marker.setPosition(place.geometry.location);
 
-        _this7.marker.setVisible(true);
+        _this9.marker.setVisible(true);
 
-        _this7.place = place;
+        _this9.place = place;
 
-        _this7.showInfoWindow();
+        _this9.showInfoWindow();
       });
     },
     prepareMap: function prepareMap() {
-      var _this8 = this;
+      var _this10 = this;
 
-      if (this.mapOnly) {
-        if (this.placeList.length === 0) {
-          if (this.locationGiven) {
-            var placeList = [{
-              coordinates: [this.locationGiven.lat, this.locationGiven.lng],
-              title: this.locationGiven.title,
-              info: this.locationGiven.info,
-              link: this.locationGiven.link,
-              logo: this.locationGiven.logo
-            }];
-            this.placeMarkersOnMap(placeList);
-          } else {
-            console.warn("if mapOnly prop set to true, then you should provide either placeList or locationGiven prop...");
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+        var placeList;
+        return regeneratorRuntime.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                if (!_this10.mapOnly) {
+                  _context4.next = 4;
+                  break;
+                }
+
+                if (_this10.placeList.length === 0) {
+                  if (_this10.locationGiven) {
+                    placeList = [{
+                      coordinates: [_this10.locationGiven.lat, _this10.locationGiven.lng],
+                      title: _this10.locationGiven.title,
+                      info: _this10.locationGiven.info,
+                      link: _this10.locationGiven.link,
+                      logo: _this10.locationGiven.logo
+                    }];
+
+                    _this10.placeMarkersOnMap(placeList);
+                  } else {
+                    console.warn("if mapOnly prop set to true, then you should provide either placeList or locationGiven prop...");
+                  }
+                } else {
+                  _this10.placeMarkersOnMap(_this10.placeList);
+                }
+
+                _context4.next = 10;
+                break;
+
+              case 4:
+                if (_this10.map) {
+                  _context4.next = 7;
+                  break;
+                }
+
+                _context4.next = 7;
+                return _this10.createMap({
+                  lat: _this10.lat,
+                  lng: _this10.lng
+                }, _this10.manually.zoom);
+
+              case 7:
+                window.google.maps.event.addListener(_this10.map, "click", function (e) {
+                  //Marker re position
+                  _this10.repositionMarker(e["latLng"]); //Hide info window
+
+
+                  _this10.hideInfoWindow();
+                });
+
+                _this10.generateSearchCard();
+
+                _this10.createInfoWindow();
+
+              case 10:
+              case "end":
+                return _context4.stop();
+            }
           }
-        } else {
-          this.placeMarkersOnMap(this.placeList);
-        }
-      } else {
-        //Adds the serach card, created a marked and creates the info window
-        //Bind map events
-        window.google.maps.event.addListener(this.map, "click", function (e) {
-          //Marker re position
-          _this8.repositionMarker(e["latLng"]); //Hide info window
-
-
-          _this8.hideInfoWindow();
-        });
-        this.generateSearchCard();
-        this.createInfoWindow();
-      }
+        }, _callee4);
+      }))();
     },
     emitData: function emitData() {
       this.$emit("changed", this.returnData());
     },
     //Get location via GPS
     getLocationViaGPS: function getLocationViaGPS() {
-      var _this9 = this;
+      var _this11 = this;
 
       this.searching_gps = true;
       this.$getLocation({
         timeout: this.gps_timeout
       }).then(function (coordinates) {
-        _this9.lat = coordinates.lat;
-        _this9.lng = coordinates.lng;
+        _this11.lat = coordinates.lat;
+        _this11.lng = coordinates.lng;
 
-        _this9.findNearestPlace();
+        _this11.findNearestPlace();
 
-        _this9.marker.setPosition({
-          lat: _this9.lat,
-          lng: _this9.lng
+        _this11.marker.setPosition({
+          lat: _this11.lat,
+          lng: _this11.lng
         });
 
-        _this9.map.panTo(new window.google.maps.LatLng(_this9.lat, _this9.lng));
+        _this11.map.panTo(new window.google.maps.LatLng(_this11.lat, _this11.lng));
       }).catch(function (error) {
         console.log(error);
       }).finally(function () {
-        _this9.searching_gps = false;
+        _this11.searching_gps = false;
       });
     },
     //Get location via props
     getLocationViaGivenLatLong: function getLocationViaGivenLatLong() {
-      var _this10 = this;
+      var _this12 = this;
 
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
         var location;
-        return regeneratorRuntime.wrap(function _callee$(_context) {
+        return regeneratorRuntime.wrap(function _callee5$(_context5) {
           while (1) {
-            switch (_context.prev = _context.next) {
+            switch (_context5.prev = _context5.next) {
               case 0:
-                location = _this10.locationGiven;
+                location = _this12.locationGiven;
 
                 if (!location.lat && !location.lng) {
-                  location = _this10.geolocation;
+                  location = _this12.geolocation;
                 }
 
-                _context.next = 4;
-                return _this10.createMap(location, _this10.zoom);
+                _context5.next = 4;
+                return _this12.createMap(location, _this12.zoom);
 
               case 4:
-                if (_this10.placeList.length === 0 && location) {
+                if (_this12.placeList.length === 0 && location) {
                   if (location.lat !== undefined && location.lng !== undefined && location.lat !== null && location.lng !== null) {
-                    _this10.lat = location.lat;
-                    _this10.lng = location.lng;
+                    _this12.lat = location.lat;
+                    _this12.lng = location.lng;
 
-                    _this10.prepareMap();
+                    _this12.prepareMap();
 
-                    _this10.createMarker(location, false);
+                    _this12.createMarker(location, false);
 
-                    _this10.marker.setPosition(location);
+                    _this12.marker.setPosition(location);
 
-                    _this10.newMerkerBubble(_this10.marker, location);
+                    _this12.newMerkerBubble(_this12.marker, location);
 
-                    _this10.map.panTo(new window.google.maps.LatLng(location));
+                    _this12.map.panTo(new window.google.maps.LatLng(location));
                   } else {
                     console.warn("Given Location {lat: lng: } value missing");
                   }
                 } else {
-                  _this10.prepareMap();
+                  _this12.prepareMap();
                 }
 
               case 5:
               case "end":
-                return _context.stop();
+                return _context5.stop();
             }
           }
-        }, _callee);
+        }, _callee5);
       }))();
     },
     buildApplication: function buildApplication() {
-      var _this11 = this;
+      var _this13 = this;
 
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+        return regeneratorRuntime.wrap(function _callee6$(_context6) {
           while (1) {
-            switch (_context2.prev = _context2.next) {
+            switch (_context6.prev = _context6.next) {
               case 0:
-                if (_this11.fallbackProcedure === "manually") {
-                  _this11.initMapManually();
-                } else if (_this11.fallbackProcedure === "geolocation") {
-                  _this11.initMapByCoordinates(_this11.lat, _this11.lng);
-                } else if (_this11.fallbackProcedure === "address") {
-                  _this11.initMapByAddress();
-                } else if (_this11.fallbackProcedure === "location-given") {
-                  _this11.getLocationViaGivenLatLong();
+                if (_this13.fallbackProcedure === "manually") {
+                  _this13.initMapManually();
+                } else if (_this13.fallbackProcedure === "geolocation") {
+                  _this13.initMapByCoordinates(_this13.lat, _this13.lng);
+                } else if (_this13.fallbackProcedure === "address") {
+                  _this13.initMapByAddress();
+                } else if (_this13.fallbackProcedure === "location-given") {
+                  _this13.getLocationViaGivenLatLong();
                 } else {
-                  _this11.searching_gps = true;
+                  _this13.searching_gps = true;
 
-                  _this11.$getLocation({
-                    timeout: _this11.gps_timeout
+                  _this13.$getLocation({
+                    timeout: _this13.gps_timeout
                   }).then(function (coordinates) {
-                    _this11.lat = coordinates.lat;
-                    _this11.lng = coordinates.lng;
+                    _this13.lat = coordinates.lat;
+                    _this13.lng = coordinates.lng;
 
-                    _this11.initMapByCoordinates(_this11.lat, _this11.lng, _this11.zoom); //Create Marker
+                    _this13.initMapByCoordinates(_this13.lat, _this13.lng, _this13.zoom); //Create Marker
 
 
-                    _this11.createMarker();
+                    _this13.createMarker();
 
-                    _this11.marker.setPosition({
-                      lat: _this11.lat,
-                      lng: _this11.lng
+                    _this13.marker.setPosition({
+                      lat: _this13.lat,
+                      lng: _this13.lng
                     });
                   }).catch(function () {
-                    _this11.initMapByAddress();
+                    _this13.initMapByAddress();
                   }).finally(function () {
-                    _this11.searching_gps = false;
+                    _this13.searching_gps = false;
                   });
                 }
 
               case 1:
               case "end":
-                return _context2.stop();
+                return _context6.stop();
             }
           }
-        }, _callee2);
+        }, _callee6);
       }))();
     }
   },
   mounted: function mounted() {
-    var _this12 = this;
+    var _this14 = this;
 
-    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-      return regeneratorRuntime.wrap(function _callee3$(_context3) {
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
+      return regeneratorRuntime.wrap(function _callee7$(_context7) {
         while (1) {
-          switch (_context3.prev = _context3.next) {
+          switch (_context7.prev = _context7.next) {
             case 0:
-              _context3.next = 2;
+              _context7.next = 2;
               return lib_loader.ensureReady();
 
             case 2:
-              if (!(_this12.ready != undefined && _this12.ready == false)) {
-                _context3.next = 4;
+              if (!(_this14.ready != undefined && _this14.ready == false)) {
+                _context7.next = 4;
                 break;
               }
 
-              return _context3.abrupt("return");
+              return _context7.abrupt("return");
 
             case 4:
-              _this12.buildApplication();
+              _this14.buildApplication();
 
             case 5:
             case "end":
-              return _context3.stop();
+              return _context7.stop();
           }
         }
-      }, _callee3);
+      }, _callee7);
     }))();
   }
 });
 // CONCATENATED MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=script&lang=js
  
-// EXTERNAL MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=style&index=0&id=9e5e7012&lang=scss
-var PlaceSearchvue_type_style_index_0_id_9e5e7012_lang_scss = __webpack_require__("5176");
+// EXTERNAL MODULE: ./gmaps/components/PlaceSearch.vue?vue&type=style&index=0&id=273d407e&lang=scss
+var PlaceSearchvue_type_style_index_0_id_273d407e_lang_scss = __webpack_require__("ef93");
 
 // EXTERNAL MODULE: ./node_modules/vue-loader-v16/dist/exportHelper.js
 var exportHelper = __webpack_require__("6b0d");
